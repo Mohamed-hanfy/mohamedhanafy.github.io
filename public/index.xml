@@ -5,13 +5,13 @@
     
     
     
-    <link>/</link>
+    <link>http://localhost:45495/</link>
     <description>Recent content on Mohamed Hanafy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 08 Feb 2026 18:49:15 +0200</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:45495/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
