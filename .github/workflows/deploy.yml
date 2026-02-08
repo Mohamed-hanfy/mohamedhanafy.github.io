@@ -18,23 +18,28 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: true  # Changed from 'recursive'
           fetch-depth: 0
-
+      
+      - name: Update submodules
+        run: git submodule update --init --recursive --remote
+      
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: '0.124.1'
           extended: true
-
+      
       - name: Build
         run: hugo --minify
-
+      
+      - name: List public directory
+        run: ls -la public/
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -46,9 +51,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
