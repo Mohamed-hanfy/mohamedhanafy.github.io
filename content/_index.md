@@ -29,10 +29,3 @@ title: "Mohamed Hanafy"
 
 ---
 
-## Blog
-
- - [How to evaluate recommention system](/posts/how-to-evaluate-recommendtion-system)
-
----
-
-
